@@ -52,12 +52,10 @@ syntax enable
 set encoding=utf-8
 
 " turn off search highlighting
-let @s = ':nohl
-'
+let @s = ':nohl'
 
 " toggle between number and relative number
-let @n = ':set relativenumber!
-'
+let @n = ':set relativenumber!'
 
 call plug#begin('~/.vim/plugged')
 
