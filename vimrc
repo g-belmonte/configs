@@ -1,9 +1,4 @@
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
-let g:powerline_pycmd="py3"
-
-" set terminal colors to 256 bits
+" set terminal colors
 set t_Co=256
 
 " set colorscheme
@@ -53,21 +48,16 @@ set showmatch
 " enable syntax highlighting
 syntax enable
 
-" set utf-8 encoding
+"set utf-8 encoding
 set encoding=utf-8
 
 " turn off search highlighting
-nnoremap <leader><space> :nohl<CR>
+let @s = ':nohl
+'
 
 " toggle between number and relative number
-function! ToggleNumber()
-  if(&relativenumber == 1)
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
+let @n = ':set relativenumber!
+'
 
 call plug#begin('~/.vim/plugged')
 
@@ -76,5 +66,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
