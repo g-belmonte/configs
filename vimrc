@@ -52,17 +52,20 @@ syntax enable
 set encoding=utf-8
 
 " turn off search highlighting
-let @s = ':nohl'
+nmap <C-h> :nohl<CR>
 
 " toggle between number and relative number
-let @n = ':set relativenumber!'
+nmap <C-j> :set relativenumber!<CR>
+
+" toggle Tagbar
+nmap <F8> >TagbarToggle<CR>
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
