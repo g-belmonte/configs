@@ -59,12 +59,12 @@ nmap <C-c> :nohl<CR>
 call plug#begin('~/.vim/plugged')
 
 " Plug
-"Plug 'easymotion/vim-easymotion'
-"Plug 'tpope/vim-fugitive'
-"Plug 'scrooloose/nerdtree'
-"Plug 'majutsushi/tagbar'
-"Plug 'tpope/vim-surround'
-"Plug 'scrooloose/nerdcommenter'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
