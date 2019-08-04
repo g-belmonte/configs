@@ -1,74 +1,80 @@
-" set terminal colors
-set t_Co=256
 
-" set colorscheme
-colorscheme default
+" enable syntax highlighting
+syntax enable
 
-" set a dark background
-set background=dark
-
-" enumerate lines
-set nu
-
-" always show status bar
-set laststatus=2
-
-" use wildmenu
-set wildmenu
-
-" use autoindent
-set autoindent
-
-" using dark background
+" I'm using a dark background
 set background=dark
 
 " no beeps
 set noerrorbells
 set novisualbell
 
+" use autoindent
+set autoindent
+
 " smart tabs
 set smarttab
 
-" space instead of tabs
+" spaces instead of tabs
 set expandtab
 
-" 1 tab = 2 spaces
+" 1 tab means 4 spaces
 set shiftwidth=2
 set tabstop=2
+
+" fancy menu
+set wildmenu
+
+" enumerate lines
+set number
 
 " highlight search results
 set hlsearch
 
-" set incremental search
-set is
+" incremental search (highlights everything that matches a search)
+set incsearch
 
-" show matching brackets, parenthesys, etc
+" show matching brackets, parenthesis, ...
 set showmatch
 
-" enable syntax highlighting
-syntax enable
-
-"set utf-8 encoding
+" set utf-8 encoding
 set encoding=utf-8
 
-" turn off search highlighting
-nmap <C-h> :nohl<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                keybindings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf
+nmap <C-t> :Files<CR>
 
-" toggle between number and relative number
-nmap <C-j> :set relativenumber!<CR>
+" toggle relative line numbering
+nmap <C-n> :set relativenumber!<CR>
 
-" toggle Tagbar
-nmap <F8> >TagbarToggle<CR>
+" turn highlighting off
+nmap <C-c> :nohl<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
-Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
+" Plug
+"Plug 'easymotion/vim-easymotion'
+"Plug 'tpope/vim-fugitive'
+"Plug 'scrooloose/nerdtree'
+"Plug 'majutsushi/tagbar'
+"Plug 'tpope/vim-surround'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'edkolev/tmuxline.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_preset = 'full'
+
