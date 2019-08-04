@@ -1,4 +1,3 @@
-
 " enable syntax highlighting
 syntax enable
 
