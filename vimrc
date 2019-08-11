@@ -11,7 +11,9 @@ set showcmd
 set hidden
 
 " I'm using a dark background
+colorscheme industry
 set background=dark
+let g:airline_theme='badwolf'
 
 " no beeps
 set noerrorbells
@@ -73,6 +75,14 @@ nmap <Leader>n :set relativenumber!<CR>
 " turn highlighting off
 nmap <Leader>h :nohl<CR>
 
+" change buffer
+nmap <Leader>bp :bp<CR>
+nmap <Leader>bn :bn<CR>
+nmap <Leader>bf :bf<CR>
+nmap <Leader>bl :bl<CR>
+nmap <Leader>bs :b#<CR>
+nmap <Leader>bb :ls<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +103,8 @@ Plug 'edkolev/tmuxline.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+" language specific
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
