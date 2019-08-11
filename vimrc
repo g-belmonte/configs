@@ -4,6 +4,9 @@
 " enable syntax highlighting
 syntax enable
 
+" show incomplete commands
+set showcmd
+
 " I'm using a dark background
 set background=dark
 
@@ -13,6 +16,7 @@ set novisualbell
 
 " use autoindent
 set autoindent
+set smartindent
 
 " spaces instead of tabs
 set expandtab
@@ -51,17 +55,20 @@ set encoding=utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" remap <Leader> to <Space>
+let mapleader=" "
+
 " fzf
-nmap <C-t> :Files<CR>
+nmap <Leader>f :Files<CR>
 
 " ripgrep
-nmap <C-r> :Rg<CR>
+nmap <Leader>r :Rg<CR>
 
 " toggle relative line numbering
-nmap <C-n> :set relativenumber!<CR>
+nmap <Leader>n :set relativenumber!<CR>
 
 " turn highlighting off
-nmap <C-c> :nohl<CR>
+nmap <Leader>h :nohl<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Plugins
