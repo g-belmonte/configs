@@ -42,6 +42,12 @@ set showmatch
 " set utf-8 encoding
 set encoding=utf-8
 
+" ignore case on search
+"set ignorecase
+
+" if ignorecase is on, show first what matches case, then show ignoring case
+"set smartcase
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
