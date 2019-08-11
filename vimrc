@@ -1,3 +1,6 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                Vim settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " enable syntax highlighting
 syntax enable
 
@@ -11,15 +14,15 @@ set novisualbell
 " use autoindent
 set autoindent
 
-" smart tabs
-set smarttab
-
 " spaces instead of tabs
 set expandtab
 
 " 1 tab means 4 spaces
 set shiftwidth=2
 set tabstop=2
+
+" smart tabs
+set smarttab
 
 " fancy menu
 set wildmenu
@@ -44,6 +47,9 @@ set encoding=utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
 nmap <C-t> :Files<CR>
+
+" ripgrep
+nmap <C-r> :Rg<CR>
 
 " toggle relative line numbering
 nmap <C-n> :set relativenumber!<CR>
