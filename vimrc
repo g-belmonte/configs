@@ -7,6 +7,9 @@ syntax enable
 " show incomplete commands
 set showcmd
 
+" make buffers hidden by default
+set hidden
+
 " I'm using a dark background
 set background=dark
 
