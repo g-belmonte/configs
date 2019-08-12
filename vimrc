@@ -100,11 +100,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
-Plug '/usr/local/opt/fzf'
+Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 
 " language specific
 Plug 'elixir-editors/vim-elixir'
+
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
