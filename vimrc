@@ -65,6 +65,7 @@ let mapleader=" "
 
 " fzf
 nmap <Leader>f :Files<CR>
+nmap <Leader>F :FZF +i<CR>
 
 " ripgrep
 nmap <Leader>r :Rg<CR>
