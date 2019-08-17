@@ -76,6 +76,9 @@ nmap <Leader>n :set relativenumber!<CR>
 " turn highlighting off
 nmap <Leader>h :nohl<CR>
 
+" toggle UndoTree
+nmap <Leader>u :UndotreeToggle<CR>
+
 " change buffer
 nmap <Leader>bp :bp<CR>
 nmap <Leader>bn :bn<CR>
