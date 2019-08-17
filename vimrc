@@ -120,6 +120,8 @@ Plug 'mbbill/undotree'
 
 " language specific
 Plug 'elixir-editors/vim-elixir'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
