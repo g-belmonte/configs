@@ -112,6 +112,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+"Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer --go-completer --ts-completer'}
 
 " language specific
 Plug 'elixir-editors/vim-elixir'
