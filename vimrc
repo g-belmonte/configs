@@ -105,9 +105,12 @@ call plug#begin('~/.vim/plugged')
 " Plug
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-tbone'
+Plug 'tpope/vim-dadbod'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -117,6 +120,12 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 "Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer --go-completer --ts-completer'}
 Plug 'mbbill/undotree'
+Plug 'vim-syntastic/syntastic'
+Plug 'SirVer/utlisnips'
+Plug 'honza/vim-snippets'
+Plug 'junegunn/vim-easy-align'
+Plug 'mattn/emmet-vim'
+Plug 'terryma/vim-multiple-cursors'
 
 " language specific
 Plug 'elixir-editors/vim-elixir'
