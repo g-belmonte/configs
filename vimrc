@@ -120,7 +120,7 @@ Plug 'junegunn/fzf.vim'
 "Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer --go-completer --ts-completer'}
 Plug 'mbbill/undotree'
 Plug 'vim-syntastic/syntastic'
-Plug 'SirVer/utlisnips'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
