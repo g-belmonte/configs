@@ -127,9 +127,10 @@ Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
 
 " language specific
-Plug 'elixir-editors/vim-elixir'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
+Plug 'tpope/vim-rails', {'for': 'ruby'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'mxw/vim-jsx', {'for': 'javascript'}
 
 call plug#end()
 
