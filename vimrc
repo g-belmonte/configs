@@ -81,8 +81,6 @@ nmap <Leader>u :UndotreeToggle<CR>
 " change buffer
 nmap <Leader>bp :bp<CR>
 nmap <Leader>bn :bn<CR>
-nmap <Leader>bf :bf<CR>
-nmap <Leader>bl :bl<CR>
 nmap <Leader>bs :b#<CR>
 nmap <Leader>bb :ls<CR>
 
@@ -91,9 +89,9 @@ map <leader>yb :w !xsel -i -b<CR>
 map <leader>yp :w !xsel -i -p<CR>
 map <leader>ys :w !xsel -i -s<CR>
 " Paste from X CLIPBOARD
+map <leader>pb :r!xsel -b<CR>
 map <leader>pp :r!xsel -p<CR>
 map <leader>ps :r!xsel -s<CR>
-map <leader>pb :r!xsel -b<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Plugins
