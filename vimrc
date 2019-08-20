@@ -93,6 +93,14 @@ map <leader>pb :r!xsel -b<CR>
 map <leader>pp :r!xsel -p<CR>
 map <leader>ps :r!xsel -s<CR>
 
+" some mapping for weird home/end behavior
+map <Esc>OH 0
+imap <Esc>OH <Esc>0i
+cmap <Esc>OH <Esc>0
+map <Esc>OF $
+imap <Esc>OF <Esc>$a
+cmap <Esc>OF <Esc>$
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
