@@ -15,8 +15,6 @@ alias grep='grep --color=auto'
 alias ll='ls --color=auto -lh'
 alias la='ls --color=auto -lah'
 alias l='ls --color=auto -CF'
-alias spacemacs='HOME=~/spacemacs emacs'
-alias spc='spacemacs'
 
 PS1='[\u@\h \W]\$ '
 
