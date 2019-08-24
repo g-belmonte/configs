@@ -11,7 +11,8 @@ set showcmd
 set hidden
 
 " I'm using a dark background
-colorscheme industry
+" ps: remember to install badwolf colorscheme in the color directory
+colorscheme badwolf
 set background=dark
 let g:airline_theme='badwolf'
 
