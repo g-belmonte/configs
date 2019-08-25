@@ -15,6 +15,7 @@ alias grep='grep --color=auto'
 alias ll='ls --color=auto -lh'
 alias la='ls --color=auto -lah'
 alias l='ls --color=auto -CF'
+alias emacs='emacs -nw'
 
 PS1='[\u@\h \W]\$ '
 
