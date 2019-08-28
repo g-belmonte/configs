@@ -94,6 +94,12 @@ map <leader>pb :r!xsel -b<CR>
 map <leader>pp :r!xsel -p<CR>
 map <leader>ps :r!xsel -s<CR>
 
+" set arrow keys to resize pane size
+nnoremap <LEFT>   <c-w><
+nnoremap <RIGHT>  <c-w>>
+nnoremap <UP>     <c-w>+
+nnoremap <DOWN>   <c-w>-
+
 " some mapping for weird home/end behavior
 map <Esc>OH 0
 imap <Esc>OH <Esc>0i
