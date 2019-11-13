@@ -16,6 +16,9 @@ colorscheme badwolf
 set background=dark
 let g:airline_theme='badwolf'
 
+" auto read when a file is changed from the outside
+set autoread
+
 " no beeps
 set noerrorbells
 set novisualbell
@@ -64,11 +67,14 @@ set encoding=utf-8
 " remap <Leader> to <Space>
 let mapleader=" "
 
+" getting out of insert mode as in Spacemacs
+inoremap fd <Esc>
+
 " fzf
-nmap <Leader>f :Files<CR>
+nmap <Leader>sf :Files<CR>
 
 " ripgrep
-nmap <Leader>r :Rg<CR>
+nmap <Leader>sr :Rg<CR>
 
 " toggle relative line numbering
 nmap <Leader>n :set relativenumber!<CR>
@@ -84,15 +90,6 @@ nmap <Leader>bp :bp<CR>
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bs :b#<CR>
 nmap <Leader>bb :ls<CR>
-
-" Copy to X CLIPBOARD                                                                                                                                     
-map <leader>yb :w !xsel -i -b<CR>
-map <leader>yp :w !xsel -i -p<CR>
-map <leader>ys :w !xsel -i -s<CR>
-" Paste from X CLIPBOARD
-map <leader>pb :r!xsel -b<CR>
-map <leader>pp :r!xsel -p<CR>
-map <leader>ps :r!xsel -s<CR>
 
 " set arrow keys to resize pane size
 nnoremap <LEFT>   <c-w><
@@ -118,11 +115,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-tbone'
-Plug 'tpope/vim-dadbod'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -130,13 +123,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-"Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer --go-completer --ts-completer'}
 Plug 'mbbill/undotree'
 Plug 'vim-syntastic/syntastic'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'junegunn/vim-easy-align'
-Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
 
 " language specific
@@ -150,4 +139,3 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_preset = 'full'
-
