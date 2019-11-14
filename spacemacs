@@ -14,7 +14,8 @@ values."
      ;; -----------------------------------------------------------------
      ;; Syntax and base tools
      ;; -----------------------------------------------------------------
-     c-c++
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
      elixir
      go
      haskell
@@ -26,6 +27,7 @@ values."
      typescript
      yaml
      emacs-lisp
+     elm
      markdown
      org
      (shell :variables
@@ -43,11 +45,13 @@ values."
      ;; tools
      helm
      auto-completion
+     better-defaults
      docker
      ranger
-     spotify
      git
      github
+     ;; applications
+     spotify
      ;; misc
      colors
      tmux
