@@ -68,7 +68,10 @@ set encoding=utf-8
 let mapleader=" "
 
 " getting out of insert mode as in Spacemacs
-inoremap fd <Esc>
+imap fd <Esc>
+
+" save file as in Spacemacs
+map <Leader>fs :w<CR>
 
 " fzf
 nmap <Leader>sf :Files<CR>
