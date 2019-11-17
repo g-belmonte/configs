@@ -26,6 +26,7 @@ values."
      sql
      typescript
      yaml
+     html
      emacs-lisp
      elm
      markdown
@@ -36,6 +37,8 @@ values."
             shell-default-term-shell "/bin/zsh")
      spell-checking
      syntax-checking
+     ibuffer
+     imenu-list
      ;; -----------------------------------------------------------------
      ;; Some other stuff
      ;; -----------------------------------------------------------------
