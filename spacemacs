@@ -144,7 +144,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
     (add-to-list 'hs-special-modes-alist
                `(elixir-mode
-                 ,(rx (or "defmodule" "defmacro" "defp" "def" "do"))
+                 ,(rx (or "fn" "do"))
                  ,(rx (or "end"))
                  ,"#"
                  nil nil))
