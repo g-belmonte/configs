@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Path
+PATH=$PATH:/home/grb/.local/bin
+
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
@@ -58,7 +61,7 @@ DISABLE_AUTO_UPDATE="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -68,7 +71,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf tmux zsh-interactive-cd)
+plugins=(tmux)
 
 
 # User configuration
@@ -79,11 +82,11 @@ plugins=(asdf tmux zsh-interactive-cd)
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -130,15 +133,9 @@ find_file() {
     vterm_cmd find-file "$(realpath "$@")"
 }
 
-# Path
-PATH=$PATH:/home/grb/.local/bin:/home/grb/go/bin
-export PATH="$PATH:/home/grb/.gem/ruby/2.7.0/bin"
-
 # Alias
 alias emacs="emacs -nw"
-
-# Env
-export EDITOR='vim'
+alias g='git'
 
 source $ZSH/oh-my-zsh.sh
 
