@@ -11,10 +11,7 @@ set showcmd
 set hidden
 
 " I'm using a dark background
-" ps: remember to install badwolf colorscheme in the color directory
-colorscheme badwolf
 set background=dark
-let g:airline_theme='badwolf'
 
 " auto read when a file is changed from the outside
 set autoread
@@ -30,7 +27,7 @@ set smartindent
 " spaces instead of tabs
 set expandtab
 
-" 1 tab means 4 spaces
+" 1 tab means 2 spaces
 set shiftwidth=2
 set tabstop=2
 
@@ -68,7 +65,7 @@ set encoding=utf-8
 let mapleader=" "
 
 " getting out of insert mode as in Spacemacs
-imap fd <Esc>
+imap jk <Esc>
 
 " save file as in Spacemacs
 map <Leader>fs :w<CR>
@@ -80,13 +77,13 @@ nmap <Leader>sf :Files<CR>
 nmap <Leader>sr :Rg<CR>
 
 " toggle relative line numbering
-nmap <Leader>n :set relativenumber!<CR>
+nmap <Leader>tn :set relativenumber!<CR>
 
 " turn highlighting off
-nmap <Leader>h :nohl<CR>
+nmap <Leader>th :nohl<CR>
 
 " toggle UndoTree
-nmap <Leader>u :UndotreeToggle<CR>
+nmap <Leader>tu :UndotreeToggle<CR>
 
 " change buffer
 nmap <Leader>bp :bp<CR>
@@ -95,10 +92,10 @@ nmap <Leader>bs :b#<CR>
 nmap <Leader>bb :ls<CR>
 
 " set arrow keys to resize pane size
-nnoremap <LEFT>   <c-w><
-nnoremap <RIGHT>  <c-w>>
-nnoremap <UP>     <c-w>-
-nnoremap <DOWN>   <c-w>+
+"nnoremap <LEFT>   <c-w><
+"nnoremap <RIGHT>  <c-w>>
+"nnoremap <UP>     <c-w>-
+"nnoremap <DOWN>   <c-w>+
 
 " some mapping for weird home/end behavior
 map <Esc>OH 0
@@ -120,11 +117,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug '~/.fzf'
+"Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'vim-syntastic/syntastic'

@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=${PATH}:/home/grb/.gem/ruby/2.6.0/bin
+export PATH=${PATH}:/home/grb/.local/bin
 export EDITOR='vim'
 export TERM=screen-256color
 
@@ -18,8 +18,3 @@ alias l='ls --color=auto -CF'
 alias emacs='emacs -nw'
 
 PS1='[\u@\h \W]\$ '
-
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/share/powerline/bindings/bash/powerline.sh
