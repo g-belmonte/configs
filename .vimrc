@@ -28,8 +28,8 @@ set smartindent
 set expandtab
 
 " 1 tab means 2 spaces
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 
 " smart tabs
 set smarttab
@@ -70,14 +70,13 @@ imap jk <Esc>
 " save file as in Spacemacs
 map <Leader>fs :w<CR>
 
-" fzf
-nmap <Leader>sf :Files<CR>
-
-" ripgrep
-nmap <Leader>sr :Rg<CR>
+" search
+nmap <Leader>. :Files<CR>
+nmap <Leader>/ :Rg<CR>
+nmap <Leader>, :ls<CR>
 
 " toggle relative line numbering
-nmap <Leader>tn :set relativenumber!<CR>
+nmap <Leader>tl :set relativenumber!<CR>
 
 " turn highlighting off
 nmap <Leader>th :nohl<CR>
@@ -132,7 +131,6 @@ Plug 'terryma/vim-multiple-cursors'
 
 " language specific
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
-Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'mxw/vim-jsx', {'for': 'javascript'}
 

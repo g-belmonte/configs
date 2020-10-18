@@ -19,6 +19,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "Source Code Pro" :size 14))
+(setq doom-unicode-font doom-font)
 (setq doom-big-font (font-spec :family "Source Code Pro" :size 18))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -52,10 +53,6 @@
 
 ;; Set default shell
 (setq-default shell-file-name "/bin/zsh")
-
-;; Set JavaScript identation level
-(setq-default js2-basic-offset 2)
-(setq-default js-indent-level 2)
 
 ;; Do not consider all text typed while on insert mode as a single big blob
 (setq-default evil-want-fine-undo t)
