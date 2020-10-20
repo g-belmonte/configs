@@ -59,3 +59,6 @@
 
 ;; Gopls path
 (setq-default lsp-go-gopls-server-path "/home/grb/go/bin/gopls")
+
+;; elixir-ls executable name
+(setq-default lsp-clients-elixir-server-executable "elixir-ls")
