@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path
-PATH=$PATH:/home/grb/.local/bin
+PATH=$PATH:$HOME/.local/bin
+export PATH
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
@@ -71,7 +72,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux)
+plugins=(mix rust stack tmux)
 
 
 # User configuration
@@ -85,7 +86,7 @@ plugins=(tmux)
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -136,14 +137,8 @@ find_file() {
 # Alias
 alias emacs="emacs -nw"
 alias g='git'
+alias vim='nvim'
 
 source $ZSH/oh-my-zsh.sh
-
-. $HOME/.asdf/asdf.sh
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit
-compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
