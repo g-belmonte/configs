@@ -51,6 +51,12 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+;; New keybindings
+(map! "C-x b" #'counsel-buffer-or-recentf
+      "C-x C-b" #'counsel-switch-buffer)
+(map! "M-g g" #'avy-goto-line
+      "M-g M-g" #'avy-goto-line)
+
 ;; Set default shell
 (setq-default shell-file-name "/bin/zsh")
 
@@ -65,3 +71,12 @@
 
 ;; purescript language server
 (setq psc-ide-purs-executable "/home/grb/.npm_globals/bin/purs")
+
+;; identation
+;; web development
+(setq-local js2-basic-offset 2) ; js2-mode
+(setq-local typescript-indent-level 2) ; typescript-mode
+(setq-local web-mode-markup-indent-offset 2) ; web-mode, html tag in html file
+(setq-local web-mode-css-indent-offset 2) ; web-mode, css tag in html file
+(setq-local web-mode-code-indent-offset 2) ; web-mode, js code in html file
+(setq-local css-indent-offset 2) ; css-mode
