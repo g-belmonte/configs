@@ -359,7 +359,10 @@
 (use-package vterm
   :ensure t
   :commands vterm-mode
-  :config (setq vterm-kill-buffer-on-exit t))
+  :config
+  (setq vterm-kill-buffer-on-exit t)
+  (add-hook 'vterm-mode-hook (lambda ()
+                               (display-line-numbers-mode -1))))
 
 (use-package anzu
   :ensure t
@@ -486,8 +489,8 @@
   :ensure t
   :mode "\\.[mc]?js\\'"
   :config
-  (setq js-basic-indent 2)
-  (setq-default js2-basic-offset 2
+  (setq-default js-basic-indent 2
+                js2-basic-offset 2
                 js2-basic-indent 2)
   (add-hook 'js2-mode-hook (lambda ()
                              (lsp)
