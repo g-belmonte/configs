@@ -229,6 +229,14 @@
 (use-package whitespace
   :bind ("C-c T w" . whitespace-mode))
 
+(use-package shell
+  :config (add-hook 'shell-mode-hook (lambda ()
+                                       (display-line-numbers-mode -1))))
+
+(use-package eshell
+  :config (add-hook 'eshell-mode-hook (lambda ()
+                                        (display-line-numbers-mode -1))))
+
 ;; Third party packages
 (use-package doom-themes
   :ensure t
