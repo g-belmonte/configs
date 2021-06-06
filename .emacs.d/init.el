@@ -293,7 +293,7 @@
 (use-package projectile
   :ensure t
   :config (projectile-mode t)
-  :bind (("C-x p f" . projectile-find-file)))
+  :bind (("C-c p" . projectile-command-map)))
 
 (use-package ibuffer-projectile
   :ensure t
@@ -309,8 +309,7 @@
 
 (use-package avy
   :ensure t
-  :bind (("M-g g" . avy-goto-line)
-         ("M-g M-g" . avy-goto-line)))
+  :bind (("M-g M-g" . avy-goto-line)))
 
 (use-package ivy
   :ensure t
@@ -327,6 +326,9 @@
   :bind (("C-s" . swiper)
          ("C-M-s" . isearch-forward-regexp)
          ("C-M-r" . isearch-backward-regexp)))
+
+(use-package fzf
+  :ensure t)
 
 (use-package counsel
   :ensure t
@@ -501,16 +503,14 @@
                 js2-basic-offset 2
                 js2-basic-indent 2)
   (add-hook 'js2-mode-hook (lambda ()
-                             (lsp)
-                             (require 'dap-firefox))))
+                             (lsp))))
 
 (use-package typescript-mode
   :ensure t
   :config
   (setq-default typescript-indent-level 2)
   (add-hook 'typescript-mode-hook (lambda ()
-                                    (lsp)
-                                    (require 'dap-firefox))))
+                                    (lsp))))
 
 (use-package web-mode
   :ensure t
