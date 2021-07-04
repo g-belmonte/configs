@@ -481,6 +481,10 @@
   :after (lsp)
   :hook (elm-mode . lsp))
 
+;; GLSL
+(use-package glsl-mode
+  :ensure t)
+
 ;; haskell
 (use-package haskell-mode
   :ensure t)
