@@ -400,7 +400,7 @@
   :config
   ;; Use this only for debugging, otherwise keep it off
   (setq lsp-log-io nil)
-  :hook (lsp-enable-which-key-integration)
+  (lsp-enable-which-key-integration t)
   :commands lsp lsp-deferred)
 
 (use-package lsp-ui
@@ -422,19 +422,16 @@
 (use-package ccls
   :ensure t
   :after (lsp)
+  :hook ((c-mode . lsp)
+         (c++-mode . lsp))
   :config
-  (add-hook 'c-mode-hook (lambda ()
-                           (lsp)
-                           (require 'dap-gdb-lldb)))
-  (add-hook 'c++-mode-hook (lambda ()
-                             (lsp)
-                             (require 'dap-gdb-lldb))))
+  (require 'dap-gdb-lldb))
 
 ;; clojure
 (use-package clojure-mode
   :ensure t
   :after (lsp)
-  :config (add-hook 'clojure-mode-hook #'lsp))
+  :hook (clojure-mode . lsp))
 
 (use-package cider
   :ensure t
@@ -473,54 +470,60 @@
 (use-package elixir-mode
   :ensure t
   :after (lsp)
+  :hook (elixir-mode . lsp)
   :config
   (setq-default lsp-elixir-server-command "/usr/lib/elixir-ls/language_server.sh")
-  (add-hook 'elixir-mode-hook (lambda ()
-                                (lsp)
-                                (require 'dap-elixir))))
+  (require 'dap-elixir))
 
 ;; elm
 (use-package elm-mode
   :ensure t
   :after (lsp)
-  :config (add-hook 'elm-mode-hook #'lsp))
+  :hook (elm-mode . lsp))
 
 ;; haskell
 (use-package haskell-mode
   :ensure t)
 
-(use-package lsp-haskell
+;; (use-package lsp-haskell
+;;   :ensure t
+;;   :after (lsp)
+;;   :hook (haskell-mode . lsp))
+(use-package dante
   :ensure t
-  :after (lsp)
-  :config (add-hook 'haskell-mode-hook #'lsp))
+  :after haskell-mode
+  :commands 'dante-mode
+  :init
+  (add-hook 'haskell-mode-hook 'flycheck-mode)
+  (add-hook 'haskell-mode-hook 'dante-mode))
+
 
 ;; js / ts / web
 (use-package js2-mode
   :ensure t
   :mode "\\.[mc]?js\\'"
+  :hook (js2-mode . lsp)
   :config
   (setq-default js-basic-indent 2
                 js2-basic-offset 2
                 js2-basic-indent 2)
-  (add-hook 'js2-mode-hook (lambda ()
-                             (lsp))))
+  (require 'dap-node))
 
 (use-package typescript-mode
   :ensure t
+  :mode "\\.ts\\'"
+  :hook (typescript-mode . lsp)
   :config
   (setq-default typescript-indent-level 2)
-  (add-hook 'typescript-mode-hook (lambda ()
-                                    (lsp))))
+  (require 'dap-node))
 
 (use-package web-mode
   :ensure t
+  :mode ("\\.html?\\'" "\\.eex\\'")
   :custom
   (web-mode-markup-indent-offset 2)
   (web-mode-css-indent-offset 2)
-  (web-mode-code-indent-offset 2)
-  :config
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.eex\\'" . web-mode)))
+  (web-mode-code-indent-offset 2))
 
 ;; json
 (use-package json-mode
@@ -538,7 +541,7 @@
 (use-package nix-mode
   :ensure t
   :after lsp
-  :config (add-hook 'nix-mode-hook #'lsp))
+  :hook (nix-mode . lsp))
 
 ;; rust
 (use-package rustic
