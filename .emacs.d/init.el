@@ -180,7 +180,6 @@
 
 (unless package-archive-contents
   (package-refresh-contents))
-
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
@@ -290,6 +289,10 @@
   (global-git-gutter-mode t)
   (custom-set-variables '(git-gutter:hide-gutter t)))
 
+(use-package direnv
+  :ensure t
+  :config (direnv-mode))
+
 (use-package projectile
   :ensure t
   :config (projectile-mode t)
@@ -342,9 +345,23 @@
 
 (use-package company
   :ensure t
+  :init
+  (setq company-require-match nil
+        company-tooltip-align-annotations t
+        company-minimum-prefix-length 1)
   :config
-  (setq company-minimum-prefix-length 1) ;; default is 3
   (global-company-mode))
+
+(use-package company-fuzzy
+  :ensure t
+  :after (company)
+  :config
+  (global-company-fuzzy-mode 1))
+
+(use-package direnv
+  :ensure t
+  :config
+  (direnv-mode))
 
 (use-package flycheck
   :ensure t
@@ -354,17 +371,25 @@
   :ensure t
   :config (setq flycheck-pos-tip-timeout 10))
 
-(use-package treemacs
+;; (use-package treemacs
+;;   :ensure t
+;;   :bind (("C-x t t" . treemacs-select-window)))
+
+;; (use-package treemacs-projectile
+;;   :after (treemacs projectile)
+;;   :ensure t)
+
+;; (use-package treemacs-magit
+;;   :after (treemacs magit)
+;;   :ensure t)
+
+(use-package neotree
   :ensure t
-  :bind (("C-x t t" . treemacs-select-window)))
-
-(use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
-
-(use-package treemacs-magit
-  :after (treemacs magit)
-  :ensure t)
+  :bind (([f8] . neotree-toggle))
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (add-hook 'neotree-mode-hook (lambda ()
+                               (display-line-numbers-mode -1))))
 
 (use-package vterm
   :ensure t
@@ -396,7 +421,8 @@
 (use-package lsp-mode
   :ensure t
   :init
-  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-keymap-prefix "C-c l"
+        lsp-enable-snippet nil)
   :config
   ;; Use this only for debugging, otherwise keep it off
   (setq lsp-log-io nil)
@@ -416,6 +442,10 @@
   :commands lsp-treemacs-errors-list)
 
 (use-package dap-mode
+  :ensure t)
+
+;; bazel
+(use-package bazel
   :ensure t)
 
 ;; cc
@@ -484,6 +514,12 @@
 ;; GLSL
 (use-package glsl-mode
   :ensure t)
+
+(use-package company-glsl
+  :ensure t
+  :config
+  (when (executable-find "glslValidator")
+    (add-to-list 'company-backends 'company-glsl)))
 
 ;; haskell
 (use-package haskell-mode
