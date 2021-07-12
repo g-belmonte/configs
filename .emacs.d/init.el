@@ -312,7 +312,11 @@
 
 (use-package avy
   :ensure t
-  :bind (("M-g M-g" . avy-goto-line)))
+  :bind (("M-g M-g" . avy-goto-line)
+         ("M-g w" . avy-goto-word-1)
+         ("M-g M-w" . avy-goto-word-0)
+         ("M-g c" . avy-goto-char-2)
+         ("M-g M-c" . avy-goto-char)))
 
 (use-package ivy
   :ensure t
@@ -349,19 +353,13 @@
   (setq company-require-match nil
         company-tooltip-align-annotations t
         company-minimum-prefix-length 1)
-  :config
-  (global-company-mode))
+  :hook (after-init . global-company-mode))
 
 (use-package company-fuzzy
   :ensure t
   :after (company)
   :config
   (global-company-fuzzy-mode 1))
-
-(use-package direnv
-  :ensure t
-  :config
-  (direnv-mode))
 
 (use-package flycheck
   :ensure t
@@ -427,7 +425,7 @@
   ;; Use this only for debugging, otherwise keep it off
   (setq lsp-log-io nil)
   (lsp-enable-which-key-integration t)
-  :commands lsp lsp-deferred)
+  :commands lsp)
 
 (use-package lsp-ui
   :ensure t
