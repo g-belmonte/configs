@@ -442,10 +442,6 @@
 (use-package dap-mode
   :ensure t)
 
-;; bazel
-(use-package bazel
-  :ensure t)
-
 ;; cc
 (use-package ccls
   :ensure t
@@ -455,20 +451,9 @@
   :config
   (require 'dap-gdb-lldb))
 
-;; clojure
-(use-package clojure-mode
-  :ensure t
-  :after (lsp)
-  :hook (clojure-mode . lsp))
-
 (use-package cider
   :ensure t
   :config (setq nrepl-log-messages t))
-
-;; common lisp
-(use-package sly
-  :ensure t
-  :config (setq inferior-lisp-program "/usr/bin/sbcl"))
 
 ;; docker
 (use-package docker
